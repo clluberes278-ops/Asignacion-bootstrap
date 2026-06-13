@@ -61,3 +61,21 @@
 .carousel {
     border: 2px solid #333;
 }
+
+/* Asegura que todas las imágenes de los agentes tengan el mismo tamaño */
+.card-img-top {
+    height: 250px; /* Ajustamos una altura estándar para todas */
+    object-fit: cover; /* Evita que las imágenes se deformen al redimensionar */
+    object-position: center 20%; /* Sube el enfoque de la imagen para que el rostro se vea más arriba */
+}
+
+/* Estilos para la sección de Tips/Popover */
+.Tips-section {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.popover {
+    border: 1px solid #0d6efd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
