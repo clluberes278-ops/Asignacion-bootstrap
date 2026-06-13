@@ -64,7 +64,7 @@
 
 /* Asegura que todas las imágenes de los agentes tengan el mismo tamaño */
 .card-img-top {
-    height: 250px; /* Ajustamos una altura estándar para todas */
+    height: 320px; /* Reducido para mejorar la simetría visual en el grid */
     object-fit: cover; /* Evita que las imágenes se deformen al redimensionar */
     object-position: center 20%; /* Sube el enfoque de la imagen para que el rostro se vea más arriba */
 }

@@ -1,13 +1,469 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="https://upload-os-bbs.hoyolab.com/upload/2022/06/13/100427891/51296d07ef153ca7dd744dc31874d548_4734072724131588175.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Personajes - Agentes de Zenless Zone Zero</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="../Estilos/Base.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <div class="Cabecera">
+        <header>
+            <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-bold" href="../ParteDeTemaDePreferencia.html">Zenless Zone Zero</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="navbar-nav">
+                            <a class="nav-link" href="facciones.html">Facciones</a>
+                            <a class="nav-link active" aria-current="page" href="personajes.html">Agentes</a>
+                            <a class="nav-link" href="noticias.html">Noticias</a>
+                            <a class="nav-link" href="equipos.html">Equipos</a>
+                        </div>
+                        <div class="navbar-nav ms-auto">
+                            <a class="nav-link fs-5 fw-bold" href="../index.html">First Page</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="container mt-5">
+      <h1 class="mb-4">Agentes</h1>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+        <!-- 1. Hoshimi Miyabi -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-primary">
+            <img src="https://zzz.honeyhunterworld.com/img/character/1091-char_role_icon.webp" class="card-img-top" alt="Hoshimi Miyabi">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">ac_unit</span>Hoshimi Miyabi</h5>
+              <p class="card-text text-muted">Atributo: Hielo</p>
+              <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info1" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info1">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Capitana de la Sección 6. Maestra de las Anomalías de Hielo, inflige daño en área devastador sobre múltiples enemigos.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Tormenta de Escarcha</li>
+                  <li>Velo de Hielo</li>
+                  <li>Ulti: Cristal Absoluto</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Anomalía</p>
+                <p class="small mb-0"><strong>Facción:</strong> Sección 6</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Ellen Joe -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-info">
+            <img src="https://pic.bittopup.com/apiUpload/94bb5b40cb16e7d12f8f91385c475c85.jpg" class="card-img-top" alt="Ellen Joe">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">water</span>Ellen Joe</h5>
+              <p class="card-text text-muted">Atributo: Hielo</p>
+              <button class="btn btn-info text-white w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info2" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info2">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Conocida como la "chica tiburón". Posee el daño crítico más alto del juego con cortes de hielo devastadores.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Colmillo Ártico</li>
+                  <li>Aceleración Glacial</li>
+                  <li>Ulti: Marea Congelante</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Ataque</p>
+                <p class="small mb-0"><strong>Facción:</strong> Victoria Housekeeping Co.</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Zhu Yuan -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-dark">
+            <img src="https://i.pinimg.com/originals/f6/a8/33/f6a83337665cefd72b93bf11c567baca.png" class="card-img-top" alt="Zhu Yuan">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">target</span>Zhu Yuan</h5>
+              <p class="card-text text-muted">Atributo: Éter</p>
+              <button class="btn btn-dark w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info3" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info3">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Agente de élite de la División de Seguridad de Nueva Eridu. Atacante a larga distancia con daño Etéreo explosivo.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Ronda Etérea</li>
+                  <li>Carga de Munición</li>
+                  <li>Ulti: Salva Final</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Ataque</p>
+                <p class="small mb-0"><strong>Facción:</strong> División de Seguridad de N.E.</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Jane Doe -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-warning">
+            <img src="https://www.korometa.com/wp-content/uploads/2024/09/jane-doe-body.png" class="card-img-top" alt="Jane Doe">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">sprint</span>Jane Doe</h5>
+              <p class="card-text text-muted">Atributo: Físico</p>
+              <button class="btn btn-warning w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info4" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info4">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> La rata más peligrosa de Nueva Eridu. Agilidad física extrema, es casi imposible que la golpeen.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Danza del Filo</li>
+                  <li>Instinto Evasivo</li>
+                  <li>Ulti: Tormenta Corporal</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Anomalía</p>
+                <p class="small mb-0"><strong>Facción:</strong> Sons of Calydon</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Yanagi -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-primary">
+            <img src="https://images.squarespace-cdn.com/content/v1/6318ed11a0c41e40951dca41/1730298753855-N9W8IHH4XX47VTJG220M/Tsukishiro+Yanagi+Builds+and+Teams+Zenless+Zone+Zero+Guide.png?format=500w" class="card-img-top" alt="Yanagi">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">bolt</span>Yanagi</h5>
+              <p class="card-text text-muted">Atributo: Eléctrico</p>
+              <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info5" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info5">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Especialista en Anomalías eléctricas de la Sección 6. Combina velocidad de ataque con control total del campo de batalla.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Corte Relampagueante</li>
+                  <li>Descarga Paralizante</li>
+                  <li>Ulti: Tormenta Eléctrica</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Anomalía</p>
+                <p class="small mb-0"><strong>Facción:</strong> Sección 6</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Qingyi -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-warning">
+            <img src="https://images.squarespace-cdn.com/content/v1/6318ed11a0c41e40951dca41/1729940454220-4ZOCPVIDKHNFCWDIB2IR/Qingyi+Builds+and+Teams+Zenless+Zone+Zero+Guide.png?format=1500w" class="card-img-top" alt="Qingyi">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">electric_bolt</span>Qingyi</h5>
+              <p class="card-text text-muted">Atributo: Eléctrico</p>
+              <button class="btn btn-warning w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info6" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info6">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Androide del Equipo de Respuesta Criminal. Experta en aturdimiento eléctrico que deja a los enemigos completamente indefensos.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Nunchaku Eléctrico</li>
+                  <li>Bucle de Shock</li>
+                  <li>Ulti: Colapso Neural</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Aturdimiento</p>
+                <p class="small mb-0"><strong>Facción:</strong> Equipo de Respuesta Criminal</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Burnice -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-danger">
+            <img src="https://m.media-amazon.com/images/I/41xI+5bNM4L._AC_SX342_SY445_.jpg" class="card-img-top" alt="Burnice">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">local_fire_department</span>Burnice White</h5>
+              <p class="card-text text-muted">Atributo: Fuego</p>
+              <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info7" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info7">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Maestra de explosiones de anomalía. Opera mejor desde fuera del campo acumulando Anomalía de Fuego con su lanzallamas doble.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Lanzallamas Dual</li>
+                  <li>Combustión Lenta</li>
+                  <li>Ulti: Explosión Caótica</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Anomalía</p>
+                <p class="small mb-0"><strong>Facción:</strong> Sons of Calydon</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Caesar King -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <img src="https://images.squarespace-cdn.com/content/v1/6318ed11a0c41e40951dca41/1729936742384-8YX7UIOWBAADAFCNJE7W/Caesar+Builds+and+Teams+Zenless+Zone+Zero+Guide.png?format=750w" class="card-img-top" alt="Caesar King">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">shield</span>Caesar King</h5>
+              <p class="card-text text-muted">Atributo: Físico</p>
+              <button class="btn btn-secondary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info8" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info8">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Líder de los Sons of Calydon. Agente defensiva S-Rank que protege al equipo con escudos físicos masivos mientras contraataca.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Muro de Acero</li>
+                  <li>Golpe de Escudo</li>
+                  <li>Ulti: Fortaleza Inamovible</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Defensa</p>
+                <p class="small mb-0"><strong>Facción:</strong> Sons of Calydon</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Rina -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-info">
+            <img src="https://zzz.gg/_ipx/w_550&q_70/images/IconRole22.png" class="card-img-top" alt="Rina">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">psychology</span>Rina</h5>
+              <p class="card-text text-muted">Atributo: Eléctrico</p>
+              <button class="btn btn-info text-white w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info9" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info9">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Soporte eléctrica de Victoria Housekeeping. Comanda marionetas mecánicas para aumentar el daño de Penetración del equipo.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Marionetas Voltaicas</li>
+                  <li>Aura de Penetración</li>
+                  <li>Ulti: Danza de Marionetas</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Apoyo</p>
+                <p class="small mb-0"><strong>Facción:</strong> Victoria Housekeeping Co.</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Von Lycaon -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-primary">
+            <img src="https://r.res.easebar.com/pic/20240627/4aea17a8-9275-4de7-8ed5-11d82a29e0e7.png" class="card-img-top" alt="Von Lycaon">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">pets</span>Von Lycaon</h5>
+              <p class="card-text text-muted">Atributo: Hielo</p>
+              <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info10" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info10">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> El caballero lobo de Victoria Housekeeping. Rey del aturdimiento de Hielo, domina el combate elegante y la inmovilización de enemigos.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Zarpazo Glacial</li>
+                  <li>Aullido Paralizante</li>
+                  <li>Ulti: Fauces del Invierno</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Aturdimiento</p>
+                <p class="small mb-0"><strong>Facción:</strong> Victoria Housekeeping Co.</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Lighter -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-danger">
+            <img src="https://zzz.gg/_ipx/w_1100&q_70/images/IconRole26.png" class="card-img-top" alt="Lighter">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">whatshot</span>Lighter</h5>
+              <p class="card-text text-muted">Atributo: Fuego</p>
+              <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info11" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info11">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Brawler de Fuego de Sons of Calydon. Domina el aturdimiento con puñetazos constantes e infernales, ideal para potenciar equipos de Fuego.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Puño Incandescente</li>
+                  <li>Combo Infernal</li>
+                  <li>Ulti: Golpe Demoledor</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Aturdimiento</p>
+                <p class="small mb-0"><strong>Facción:</strong> Sons of Calydon</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. Astra Yao -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-warning">
+            <img src="https://m.media-amazon.com/images/I/41JDZYR14mL._AC_.jpg" class="card-img-top" alt="Astra Yao">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">star</span>Astra Yao</h5>
+              <p class="card-text text-muted">Atributo: Éter</p>
+              <button class="btn btn-warning w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info12" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info12">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> El apoyo místico que todo equipo necesita. Soporte Éter de Stars of Lyra con curaciones y mejoras grupales excepcionales.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Melodía Celestial</li>
+                  <li>Aura Restauradora</li>
+                  <li>Ulti: Sinfonía Estelar</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Apoyo</p>
+                <p class="small mb-0"><strong>Facción:</strong> Stars of Lyra</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. Evelyn -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-danger">
+            <img src="https://media.karousell.com/media/photos/products/2025/3/3/zzz_evelyn_chevalier_full_set__1741018288_1ae8d239.jpg" class="card-img-top" alt="Evelyn">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">flare</span>Evelyn</h5>
+              <p class="card-text text-muted">Atributo: Fuego</p>
+              <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info13" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info13">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Rapidez ígnea en cada golpe. Atacante de Fuego de Stars of Lyra con combos velocísimos y daño explosivo sostenido.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Ráfaga Ígnea</li>
+                  <li>Paso de Llama</li>
+                  <li>Ulti: Destello Abrasador</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Ataque</p>
+                <p class="small mb-0"><strong>Facción:</strong> Stars of Lyra</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14. Harumasa -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-warning">
+            <img src="https://ami.animecharactersdatabase.com/uploads/chars/41903-1628605789.png" class="card-img-top" alt="Harumasa">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">offline_bolt</span>Harumasa</h5>
+              <p class="card-text text-muted">Atributo: Eléctrico</p>
+              <button class="btn btn-warning w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info14" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info14">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Atacante eléctrico rápido y preciso de la Sección 6. Especializado en daño perforante con cortes a alta velocidad.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Corte Perforante</li>
+                  <li>Descarga Rápida</li>
+                  <li>Ulti: Tajo Eléctrico</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Ataque</p>
+                <p class="small mb-0"><strong>Facción:</strong> Sección 6</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15. Koleda -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-danger">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.Qdd6BGYppffG15eNFFA--gHaFs?rs=1&pid=ImgDetMain&o=7&rm=3" class="card-img-top" alt="Koleda">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">hardware</span>Koleda</h5>
+              <p class="card-text text-muted">Atributo: Fuego</p>
+              <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info15" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info15">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Líder de Belobog Heavy Industries. Tanque de Fuego con potencia de aturdimiento masivo, capaz de mantener toda la línea de frente.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Martillazo Industrial</li>
+                  <li>Sobrecalentamiento</li>
+                  <li>Ulti: Maquinaria de Guerra</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Aturdimiento</p>
+                <p class="small mb-0"><strong>Facción:</strong> Belobog Heavy Industries</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 16. Nicole Demara -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-success">
+            <img src="https://i.pinimg.com/736x/48/24/72/48247270ff660d5fb3cbadcddc45d24e.jpg" class="card-img-top" alt="Nicole Demara">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">diamond</span>Nicole Demara</h5>
+              <p class="card-text text-muted">Atributo: Éter</p>
+              <button class="btn btn-success w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info16" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info16">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Líder de los Cunning Hares. Soporte Éter que reduce la defensa enemiga y potencia a todo el equipo con su campo de distorsión.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Campo de Distorsión</li>
+                  <li>Reducción de Defensa</li>
+                  <li>Ulti: Trampa Etérea</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Apoyo</p>
+                <p class="small mb-0"><strong>Facción:</strong> Cunning Hares</p>
+                <p class="small mb-0"><strong>Rareza:</strong> A-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 17. Soldier 11 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-danger">
+            <img src="https://act-webstatic.hoyoverse.com/game_record/zzz/role_vertical_painting/role_vertical_painting_1041.png" class="card-img-top" alt="Soldier 11">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">swords</span>Soldier 11</h5>
+              <p class="card-text text-muted">Atributo: Fuego</p>
+              <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info17" aria-expanded="false">Ver detalles</button>
+              <div class="collapse mt-3 text-start" id="info17">
+                <hr>
+                <p class="small"><strong>Descripción:</strong> Frontliner de Fuego con estilo agresivo. Entra al combate y destruye con combos rápidos de espada incandescente.</p>
+                <h6>Habilidades:</h6>
+                <ul class="small">
+                  <li>Corte Incendiario</li>
+                  <li>Avance Ardiente</li>
+                  <li>Ulti: Filo de Llama</li>
+                </ul>
+                <p class="small mb-0"><strong>Especialidad:</strong> Ataque</p>
+                <p class="small mb-0"><strong>Facción:</strong> Obol Squad</p>
+                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
