@@ -1,0 +1,43 @@
+.Cabecera {
+    font-family: 'Arial', sans-serif; /* Cambia la fuente a Arial */
+    color: #000000; /* Cambia el color del texto a azul de Bootstrap */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil al texto */
+    background: linear-gradient(90deg, #0d6efd, #6610f2); /* Agrega un fondo degradado */
+}
+
+.tarjeta-interactiva {
+    transition: transform 0.3s ease, color 0.3s ease; /* Hace que el cambio sea suave */
+}
+
+.tarjeta-interactiva:hover {
+    color: #0d6efd; /* Cambia el texto a azul de Bootstrap al pasar el mouse */
+    transform: translateY(-5px); /* Lo eleva sutilmente */
+    cursor: pointer;
+}
+
+.hover {
+   transition: transform 0.3s ease, color 0.3s ease; /* Hace que el cambio sea suave */
+}
+.hover:hover {
+    color: #0d6efd; /* Cambia el texto a azul de Bootstrap al pasar el mouse */
+    transform: translateY(-5px); /* Lo eleva sutilmente */
+    cursor: pointer;
+}
+
+.btn-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0d6efd; /* Azul de Bootstrap */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+.btn-flotante:hover {
+    background-color: #0b5ed7; /* Un tono más oscuro de azul de Bootstrap */
+    transform: translateY(-3px); /* Eleva el botón ligeramente */
+}
