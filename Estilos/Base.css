@@ -41,3 +41,23 @@
     background-color: #0b5ed7; /* Un tono más oscuro de azul de Bootstrap */
     transform: translateY(-3px); /* Eleva el botón ligeramente */
 }
+
+/* Estilos para el Hero de Zenless Zone Zero */
+.hero-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    color: white;
+    border-bottom: 3px solid #0d6efd;
+}
+
+.hero-section h1 {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(13, 110, 253, 0.5);
+}
+
+.hero-section .lead {
+    color: #adb5bd;
+}
+
+.carousel {
+    border: 2px solid #333;
+}
