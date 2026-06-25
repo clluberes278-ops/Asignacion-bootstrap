@@ -14,7 +14,7 @@
         <header>
             <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand fw-bold" href="../ParteDeTemaDePreferencia.html">ZZZ Wiki</a>
+                    <a class="navbar-brand fw-bold" href="../Index.html">ZZZ Wiki</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -23,10 +23,9 @@
                             <a class="nav-link" href="facciones.html">Facciones</a>
                             <a class="nav-link active" aria-current="page" href="personajes.html">Agentes</a>
                             <a class="nav-link" href="noticias.html">Noticias</a>
-                            <a class="nav-link" href="equipos.html">Equipos</a>
                         </div>
                         <div class="navbar-nav ms-auto">
-                            <a class="nav-link fs-5 fw-bold" href="../index.html">First Page</a>
+
                         </div>
                     </div>
                 </div>
@@ -35,6 +34,35 @@
     </div>
     <div class="container mt-5">
       <h1 class="mb-4">Agentes</h1>
+      <!-- FILTROS -->
+      <div class="mb-4 d-flex flex-wrap gap-2 align-items-center">
+        <div class="me-3">
+          <span class="fw-bold small text-muted me-2">ATRIBUTO</span>
+          <div class="btn-group flex-wrap" role="group" id="filtro-atributo">
+            <button class="btn btn-sm btn-outline-secondary active" data-filtro="atributo" data-valor="">Todos</button>
+            <button class="btn btn-sm btn-outline-info"      data-filtro="atributo" data-valor="Electrico">⚡ Eléctrico</button>
+            <button class="btn btn-sm btn-outline-success"   data-filtro="atributo" data-valor="Eter">✨ Éter</button>
+            <button class="btn btn-sm btn-outline-secondary" data-filtro="atributo" data-valor="Fisico">👊 Físico</button>
+            <button class="btn btn-sm btn-outline-danger"    data-filtro="atributo" data-valor="Fuego">🔥 Fuego</button>
+            <button class="btn btn-sm btn-outline-primary"   data-filtro="atributo" data-valor="Hielo">❄️ Hielo</button>
+          </div>
+        </div>
+        <div>
+          <span class="fw-bold small text-muted me-2">ROL</span>
+          <div class="btn-group flex-wrap" role="group" id="filtro-rol">
+            <button class="btn btn-sm btn-outline-secondary active" data-filtro="rol" data-valor="">Todos</button>
+            <button class="btn btn-sm btn-outline-dark" data-filtro="rol" data-valor="Atacante">⚔️ Atacante</button>
+            <button class="btn btn-sm btn-outline-dark" data-filtro="rol" data-valor="Anomalo">☣️ Anómalo</button>
+            <button class="btn btn-sm btn-outline-dark" data-filtro="rol" data-valor="Aturdidor">💫 Aturdidor</button>
+            <button class="btn btn-sm btn-outline-dark" data-filtro="rol" data-valor="Auxiliar">💚 Auxiliar</button>
+            <button class="btn btn-sm btn-outline-dark" data-filtro="rol" data-valor="Defensor">🛡️ Defensor</button>
+          </div>
+        </div>
+        <div class="ms-auto">
+          <span class="badge bg-secondary" id="conteo-agentes">49 agentes</span>
+        </div>
+      </div>
+
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
 
         <!-- 1. Hoshimi Miyabi -->
@@ -44,7 +72,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">ac_unit</span>Hoshimi Miyabi</h5>
               <p class="card-text text-muted">Atributo: Hielo</p>
-              <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info1" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-primary w-100 btn-abrir-modal" data-id-agente="Miyabi">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info1">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Capitana de la Sección 6. Maestra de las Anomalías de Hielo, inflige daño en área devastador sobre múltiples enemigos.</p>
@@ -69,7 +97,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">water</span>Ellen Joe</h5>
               <p class="card-text text-muted">Atributo: Hielo</p>
-              <button class="btn btn-info text-white w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info2" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-info text-white w-100 btn-abrir-modal" data-id-agente="Ellen">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info2">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Conocida como la "chica tiburón". Posee el daño crítico más alto del juego con cortes de hielo devastadores.</p>
@@ -88,29 +116,20 @@
         </div>
 
         <!-- 3. Zhu Yuan -->
-        <div class="col">
-          <div class="card h-100 shadow-sm border-dark">
-            <img src="https://i.pinimg.com/originals/f6/a8/33/f6a83337665cefd72b93bf11c567baca.png" class="card-img-top" alt="Zhu Yuan">
-            <div class="card-body text-center">
-              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">target</span>Zhu Yuan</h5>
-              <p class="card-text text-muted">Atributo: Éter</p>
-              <button class="btn btn-dark w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info3" aria-expanded="false">Ver detalles</button>
-              <div class="collapse mt-3 text-start" id="info3">
-                <hr>
-                <p class="small"><strong>Descripción:</strong> Agente de élite de la División de Seguridad de Nueva Eridu. Atacante a larga distancia con daño Etéreo explosivo.</p>
-                <h6>Habilidades:</h6>
-                <ul class="small">
-                  <li>Ronda Etérea</li>
-                  <li>Carga de Munición</li>
-                  <li>Ulti: Salva Final</li>
-                </ul>
-                <p class="small mb-0"><strong>Especialidad:</strong> Ataque</p>
-                <p class="small mb-0"><strong>Facción:</strong> División de Seguridad de N.E.</p>
-                <p class="small mb-0"><strong>Rareza:</strong> S-Rank</p>
-              </div>
-            </div>
-          </div>
-        </div>
+       <!-- 3. Zhu Yuan -->
+<div class="col">
+  <div class="card h-100 shadow-sm border-dark">
+    <img src="https://i.pinimg.com/originals/f6/a8/33/f6a83337665cefd72b93bf11c567baca.png" class="card-img-top" alt="Zhu Yuan">
+    <div class="card-body text-center">
+      <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">target</span>Zhu Yuan</h5>
+      <p class="card-text text-muted">Atributo: Éter</p>
+      
+      <!-- Botón actualizado -->
+      <button class="btn btn-dark w-100 btn-abrir-modal" data-id-agente="Zhu Yuan">Ver detalles</button>
+      
+    </div>
+  </div>
+</div>
 
         <!-- 4. Jane Doe -->
         <div class="col">
@@ -119,7 +138,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">sprint</span>Jane Doe</h5>
               <p class="card-text text-muted">Atributo: Físico</p>
-              <button class="btn btn-warning w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info4" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-warning w-100 btn-abrir-modal" data-id-agente="Jane Doe">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info4">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> La rata más peligrosa de Nueva Eridu. Agilidad física extrema, es casi imposible que la golpeen.</p>
@@ -144,7 +163,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">bolt</span>Yanagi</h5>
               <p class="card-text text-muted">Atributo: Eléctrico</p>
-              <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info5" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-primary w-100 btn-abrir-modal" data-id-agente="Yanagi">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info5">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Especialista en Anomalías eléctricas de la Sección 6. Combina velocidad de ataque con control total del campo de batalla.</p>
@@ -169,7 +188,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">electric_bolt</span>Qingyi</h5>
               <p class="card-text text-muted">Atributo: Eléctrico</p>
-              <button class="btn btn-warning w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info6" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-warning w-100 btn-abrir-modal" data-id-agente="Qingyi">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info6">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Androide del Equipo de Respuesta Criminal. Experta en aturdimiento eléctrico que deja a los enemigos completamente indefensos.</p>
@@ -194,7 +213,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">local_fire_department</span>Burnice White</h5>
               <p class="card-text text-muted">Atributo: Fuego</p>
-              <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info7" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-danger w-100 btn-abrir-modal" data-id-agente="Burnice">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info7">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Maestra de explosiones de anomalía. Opera mejor desde fuera del campo acumulando Anomalía de Fuego con su lanzallamas doble.</p>
@@ -219,7 +238,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">shield</span>Caesar King</h5>
               <p class="card-text text-muted">Atributo: Físico</p>
-              <button class="btn btn-secondary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info8" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Caesar">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info8">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Líder de los Sons of Calydon. Agente defensiva S-Rank que protege al equipo con escudos físicos masivos mientras contraataca.</p>
@@ -244,7 +263,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">psychology</span>Rina</h5>
               <p class="card-text text-muted">Atributo: Eléctrico</p>
-              <button class="btn btn-info text-white w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info9" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-info text-white w-100 btn-abrir-modal" data-id-agente="Rina">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info9">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Soporte eléctrica de Victoria Housekeeping. Comanda marionetas mecánicas para aumentar el daño de Penetración del equipo.</p>
@@ -269,7 +288,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">pets</span>Von Lycaon</h5>
               <p class="card-text text-muted">Atributo: Hielo</p>
-              <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info10" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-primary w-100 btn-abrir-modal" data-id-agente="Lycaon">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info10">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> El caballero lobo de Victoria Housekeeping. Rey del aturdimiento de Hielo, domina el combate elegante y la inmovilización de enemigos.</p>
@@ -294,7 +313,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">whatshot</span>Lighter</h5>
               <p class="card-text text-muted">Atributo: Fuego</p>
-              <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info11" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-danger w-100 btn-abrir-modal" data-id-agente="Lighter">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info11">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Brawler de Fuego de Sons of Calydon. Domina el aturdimiento con puñetazos constantes e infernales, ideal para potenciar equipos de Fuego.</p>
@@ -319,7 +338,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">star</span>Astra Yao</h5>
               <p class="card-text text-muted">Atributo: Éter</p>
-              <button class="btn btn-warning w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info12" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-warning w-100 btn-abrir-modal" data-id-agente="Astra Yao">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info12">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> El apoyo místico que todo equipo necesita. Soporte Éter de Stars of Lyra con curaciones y mejoras grupales excepcionales.</p>
@@ -344,7 +363,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">flare</span>Evelyn</h5>
               <p class="card-text text-muted">Atributo: Fuego</p>
-              <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info13" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-danger w-100 btn-abrir-modal" data-id-agente="Evelyn">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info13">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Rapidez ígnea en cada golpe. Atacante de Fuego de Stars of Lyra con combos velocísimos y daño explosivo sostenido.</p>
@@ -369,7 +388,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">offline_bolt</span>Harumasa</h5>
               <p class="card-text text-muted">Atributo: Eléctrico</p>
-              <button class="btn btn-warning w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info14" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-warning w-100 btn-abrir-modal" data-id-agente="Harumasa">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info14">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Atacante eléctrico rápido y preciso de la Sección 6. Especializado en daño perforante con cortes a alta velocidad.</p>
@@ -394,7 +413,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">hardware</span>Koleda</h5>
               <p class="card-text text-muted">Atributo: Fuego</p>
-              <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info15" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-danger w-100 btn-abrir-modal" data-id-agente="Koleda">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info15">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Líder de Belobog Heavy Industries. Tanque de Fuego con potencia de aturdimiento masivo, capaz de mantener toda la línea de frente.</p>
@@ -419,7 +438,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">diamond</span>Nicole Demara</h5>
               <p class="card-text text-muted">Atributo: Éter</p>
-              <button class="btn btn-success w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info16" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-success w-100 btn-abrir-modal" data-id-agente="Nicole">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info16">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Líder de los Cunning Hares. Soporte Éter que reduce la defensa enemiga y potencia a todo el equipo con su campo de distorsión.</p>
@@ -444,7 +463,7 @@
             <div class="card-body text-center">
               <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">swords</span>Soldier 11</h5>
               <p class="card-text text-muted">Atributo: Fuego</p>
-              <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#info17" aria-expanded="false">Ver detalles</button>
+              <button class="btn btn-danger w-100 btn-abrir-modal" data-id-agente="Soldier 11">Ver detalles</button>
               <div class="collapse mt-3 text-start" id="info17">
                 <hr>
                 <p class="small"><strong>Descripción:</strong> Frontliner de Fuego con estilo agresivo. Entra al combate y destruye con combos rápidos de espada incandescente.</p>
@@ -461,10 +480,362 @@
             </div>
           </div>
         </div>
+
+        <!-- Nekomiya Mana -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">pets</span>Nekomiya Mana</h5>
+              <p class="card-text text-muted">Atributo: Físico</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Nekomata">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anby Demara -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-warning">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">electric_bolt</span>Anby Demara</h5>
+              <p class="card-text text-muted">Atributo: Eléctrico</p>
+              <button class="btn btn-warning text-dark w-100 btn-abrir-modal" data-id-agente="Anby">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Billy Kid -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">sports_esports</span>Billy Kid</h5>
+              <p class="card-text text-muted">Atributo: Físico</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Billy">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Starlight Billy -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">star</span>Starlight Billy</h5>
+              <p class="card-text text-muted">Atributo: Físico</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Starlight Billy">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corin Wickes -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">cleaning_services</span>Corin Wickes</h5>
+              <p class="card-text text-muted">Atributo: Físico</p>
+              <button class="btn btn-light text-dark w-100 btn-abrir-modal" data-id-agente="Corin Wickes">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grace Howard -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-warning">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">science</span>Grace Howard</h5>
+              <p class="card-text text-muted">Atributo: Eléctrico</p>
+              <button class="btn btn-warning text-dark w-100 btn-abrir-modal" data-id-agente="Grace">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anton Ivanov -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-warning">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">fitness_center</span>Anton Ivanov</h5>
+              <p class="card-text text-muted">Atributo: Eléctrico</p>
+              <button class="btn btn-warning text-dark w-100 btn-abrir-modal" data-id-agente="Anton">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ben Bigger -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-danger">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">shield</span>Ben Bigger</h5>
+              <p class="card-text text-muted">Atributo: Fuego</p>
+              <button class="btn btn-danger w-100 btn-abrir-modal" data-id-agente="Ben">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soukaku -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-info">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">ac_unit</span>Soukaku</h5>
+              <p class="card-text text-muted">Atributo: Hielo</p>
+              <button class="btn btn-info text-dark w-100 btn-abrir-modal" data-id-agente="Soukaku">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seth Lowell -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-warning">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">security</span>Seth Lowell</h5>
+              <p class="card-text text-muted">Atributo: Eléctrico</p>
+              <button class="btn btn-warning text-dark w-100 btn-abrir-modal" data-id-agente="Seth">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lucy -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-danger">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">music_note</span>Lucy</h5>
+              <p class="card-text text-muted">Atributo: Fuego</p>
+              <button class="btn btn-danger w-100 btn-abrir-modal" data-id-agente="Lucy">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Piper Wheel -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">roller_skating</span>Piper Wheel</h5>
+              <p class="card-text text-muted">Atributo: Físico</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Piper">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pulchra -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">self_improvement</span>Pulchra</h5>
+              <p class="card-text text-muted">Atributo: Físico</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Pulchra">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trigger -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-warning">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">gps_fixed</span>Trigger</h5>
+              <p class="card-text text-muted">Atributo: Eléctrico</p>
+              <button class="btn btn-warning text-dark w-100 btn-abrir-modal" data-id-agente="Trigger">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ukinami Yuzuha -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">ghost</span>Ukinami Yuzuha</h5>
+              <p class="card-text text-muted">Atributo: Físico</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Ukinami Yuzuha">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alice Thymefield -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">search</span>Alice Thymefield</h5>
+              <p class="card-text text-muted">Atributo: Por confirmar</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Alice Thymefield">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Komano Manato -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">person</span>Komano Manato</h5>
+              <p class="card-text text-muted">Atributo: Por confirmar</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Komano Manato">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lucia Elowen -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">visibility</span>Lucia Elowen</h5>
+              <p class="card-text text-muted">Atributo: Por confirmar</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Lucia Elowen">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yidhari Murphy -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">chat</span>Yidhari Murphy</h5>
+              <p class="card-text text-muted">Atributo: Por confirmar</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Yidhari Murphy">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promeia -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-info">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">gavel</span>Promeia</h5>
+              <p class="card-text text-muted">Atributo: Hielo</p>
+              <button class="btn btn-info text-dark w-100 btn-abrir-modal" data-id-agente="Promeia">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zhao -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-info">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">verified_user</span>Zhao</h5>
+              <p class="card-text text-muted">Atributo: Hielo</p>
+              <button class="btn btn-info text-dark w-100 btn-abrir-modal" data-id-agente="Zhao">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dialyn -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">support_agent</span>Dialyn</h5>
+              <p class="card-text text-muted">Atributo: Físico</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Dialyn">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banyue -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">sports_martial_arts</span>Banyue</h5>
+              <p class="card-text text-muted">Atributo: Por confirmar</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Banyue">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ye Shunguang -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">sword_rose</span>Ye Shunguang</h5>
+              <p class="card-text text-muted">Atributo: Por confirmar</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Ye Shunguang">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pan Yinhui -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">temple_buddhist</span>Pan Yinhui</h5>
+              <p class="card-text text-muted">Atributo: Por confirmar</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Pan Yinhui">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yixuan -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">brightness_high</span>Yixuan</h5>
+              <p class="card-text text-muted">Atributo: Por confirmar</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Yixuan">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ju Fufu -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-danger">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">local_fire_department</span>Ju Fufu</h5>
+              <p class="card-text text-muted">Atributo: Fuego</p>
+              <button class="btn btn-danger w-100 btn-abrir-modal" data-id-agente="Ju Fufu">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nangong Yu -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-success">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">mic</span>Nangong Yu</h5>
+              <p class="card-text text-muted">Atributo: Éter</p>
+              <button class="btn btn-success w-100 btn-abrir-modal" data-id-agente="Nangong Yu">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aria -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-success">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">album</span>Aria</h5>
+              <p class="card-text text-muted">Atributo: Éter</p>
+              <button class="btn btn-success w-100 btn-abrir-modal" data-id-agente="Aria">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sunna -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-secondary">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">piano</span>Sunna</h5>
+              <p class="card-text text-muted">Atributo: Físico</p>
+              <button class="btn btn-secondary w-100 btn-abrir-modal" data-id-agente="Sunna">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cissia -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-warning">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">electric_bolt</span>Cissia</h5>
+              <p class="card-text text-muted">Atributo: Eléctrico</p>
+              <button class="btn btn-warning text-dark w-100 btn-abrir-modal" data-id-agente="Cissia">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pyrois -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-success">
+            <div class="card-body text-center">
+              <h5 class="card-title"><span class="material-symbols-outlined align-middle me-1">rocket_launch</span>Pyrois</h5>
+              <p class="card-text text-muted">Atributo: Éter</p>
+              <button class="btn btn-success w-100 btn-abrir-modal" data-id-agente="Pyrois">Ver detalles</button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <div class="pie mt-5 py-4 border-top bg-light">
         <footer class="container text-center">
             <p class="mb-1 text-muted">&copy; 2026 Zenless Zone Zero Wiki - Proyecto Académico</p>
@@ -477,5 +848,111 @@
             </div>
         </footer>
     </div>
+    <div class="modal fade" id="agenteModal" tabindex="-1" aria-labelledby="agenteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white border-bottom-0">
+                <h5 class="modal-title fw-bold" id="modalNombre">Nombre del Agente</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <ul class="nav nav-tabs nav-fill bg-light" id="agenteTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active fw-bold text-dark" id="perfil-tab" data-bs-toggle="tab" data-bs-target="#perfil" type="button" role="tab">Perfil</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link fw-bold text-dark" id="builds-tab" data-bs-toggle="tab" data-bs-target="#builds" type="button" role="tab">Mejores Builds</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link fw-bold text-dark" id="equipos-tab" data-bs-toggle="tab" data-bs-target="#equipos" type="button" role="tab">Equipos</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content p-4" id="agenteTabsContent">
+                    <div class="tab-pane fade show active text-center" id="perfil" role="tabpanel">
+                        <img id="modalImagen" src="" alt="Agente" class="rounded-circle border border-3 mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+                        <h6 class="text-muted mb-3"><span id="modalAtributo"></span> | <span id="modalRol"></span></h6>
+                        <p id="modalDescripcion" class="small"></p>
+                    </div>
+                    <div class="tab-pane fade" id="builds" role="tabpanel">
+                        <div class="card border-warning mb-3 shadow-sm">
+                            <div class="card-header bg-warning text-dark fw-bold">Build Recomendada (Premium)</div>
+                            <div class="card-body">
+                                <p id="modalBuildPremium" class="card-text small mb-0"></p>
+                            </div>
+                        </div>
+                        <div class="card border-info shadow-sm">
+                            <div class="card-header bg-info text-white fw-bold">Build F2P (Accesible)</div>
+                            <div class="card-body">
+                                <p id="modalBuildF2P" class="card-text small mb-0"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="equipos" role="tabpanel">
+                        <div class="bg-light p-3 rounded border">
+                            <h6 class="fw-bold"><span class="material-symbols-outlined align-middle me-1">group</span> Sinergia Recomendada</h6>
+                            <p id="modalSinergia" class="small text-muted mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/personajes.js"></script>
+  
+    <script>
+    (function () {
+        // Lee atributo y especificacion directamente de BD_agentes
+        const cards = document.querySelectorAll(".col");
+        let filtroAtributo = "";
+        let filtroRol      = "";
+
+        function getKey(card) {
+            const btn = card.querySelector(".btn-abrir-modal");
+            return btn ? btn.getAttribute("data-id-agente") : null;
+        }
+
+        function aplicar() {
+            let visibles = 0;
+            cards.forEach(card => {
+                const key = getKey(card);
+                if (!key || !BD_agentes[key]) { card.style.display = ""; return; }
+                const ag = BD_agentes[key];
+                const okAtrib = !filtroAtributo || ag.atributo === filtroAtributo;
+                const okRol   = !filtroRol      || ag.especificacion === filtroRol;
+                if (okAtrib && okRol) {
+                    card.style.display = "";
+                    visibles++;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+            const el = document.getElementById("conteo-agentes");
+            if (el) el.textContent = visibles + " agente" + (visibles !== 1 ? "s" : "");
+        }
+
+        function bindGrupo(grupoId, onCambio) {
+            const grupo = document.getElementById(grupoId);
+            if (!grupo) return;
+            grupo.querySelectorAll("button").forEach(btn => {
+                btn.addEventListener("click", function () {
+                    grupo.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+                    this.classList.add("active");
+                    onCambio(this.dataset.valor);
+                    aplicar();
+                });
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            bindGrupo("filtro-atributo", v => filtroAtributo = v);
+            bindGrupo("filtro-rol",      v => filtroRol      = v);
+            aplicar();
+        });
+    })();
+    </script>
+
   </body>
 </html>
