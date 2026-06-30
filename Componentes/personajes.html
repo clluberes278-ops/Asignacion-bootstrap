@@ -98,10 +98,11 @@
                             <button class="nav-link fw-bold text-dark" id="equipos-tab" data-bs-toggle="tab" data-bs-target="#equipos" type="button" role="tab">Equipos</button>
                         </li>
                     </ul>
-                    <div class="tab-content p-4" id="agenteTabsContent">
-                        <div class="tab-pane fade show active text-center" id="perfil" role="tabpanel">
-                            <img id="modalImagen" src="" alt="Agente" class="rounded-circle border border-3 mb-3" style="width:120px;height:120px;object-fit:cover;">
-                            <h6 class="text-muted mb-3">
+                    <div class="tab-pane fade show active text-center" id="perfil" role="tabpanel">
+    <div class="agente-imagen-wrapper mb-3" id="modalImagenWrapper">
+        <img id="modalImagen" src="" alt="Agente" class="agente-imagen-modal">
+    </div>
+    <h6 class="text-muted mb-3">
                                 <span id="modalAtributo"></span> | <span id="modalRol"></span>
                             </h6>
                             <p id="modalDescripcion" class="small"></p>

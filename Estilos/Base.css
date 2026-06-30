@@ -79,3 +79,51 @@
     border: 1px solid #0d6efd;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+/* ===== Imagen del Agente en el Modal de detalles ===== */
+.agente-imagen-wrapper {
+    width: 100%;
+    height: 320px; /* misma altura que .card-img-top para mantener consistencia visual */
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); /* mismo degradado que .hero-section */
+    border: 2px solid #333; /* mismo borde que .carousel */
+}
+
+.agente-imagen-modal {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain; /* nunca recorta al personaje, a diferencia de .card-img-top */
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease; /* mismo timing que .tarjeta-interactiva */
+}
+
+.agente-imagen-wrapper:hover .agente-imagen-modal {
+    transform: scale(1.03);
+}
+
+/* Theming dinámico por atributo - JS agrega data-atributo al wrapper */
+.agente-imagen-wrapper[data-atributo="Hielo"] {
+    background: linear-gradient(135deg, #0c2d48 0%, #145da0 100%);
+    border-color: #145da0;
+}
+.agente-imagen-wrapper[data-atributo="Fuego"] {
+    background: linear-gradient(135deg, #3d0c02 0%, #b3370f 100%);
+    border-color: #b3370f;
+}
+.agente-imagen-wrapper[data-atributo="Electrico"] {
+    background: linear-gradient(135deg, #2d2a00 0%, #b3a500 100%);
+    border-color: #b3a500;
+}
+.agente-imagen-wrapper[data-atributo="Eter"] {
+    background: linear-gradient(135deg, #1a0c33 0%, #6a0fb3 100%);
+    border-color: #6a0fb3;
+}
+.agente-imagen-wrapper[data-atributo="Fisico"] {
+    background: linear-gradient(135deg, #2b2b2b 0%, #5c5c5c 100%);
+    border-color: #5c5c5c;
+}
