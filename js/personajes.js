@@ -1,5 +1,3 @@
-
-
 class Agente {
     constructor(id, nombre, imagen, atributo, especificacion, descripcion) {
         this.id             = id;
@@ -27,6 +25,7 @@ class Agente {
 
         return `
         <div class="col agente-card"
+             data-nombre="${this.nombre}"
              data-atributo="${this.atributo}"
              data-rol="${this.especificacion}">
             <div class="card h-100 shadow-sm border-${color}">
@@ -185,7 +184,10 @@ const listaAgentes = [
     // ANGELS OF DELUSION
     new AgenteJugable("Nangong Yu",     "Nangong Yu",             "https://tse1.mm.bing.net/th/id/OIP.fApADPn3zvD9nOLWDVj3CgHaK-?rs=1&pid=ImgDetMain&o=7&rm=3", "Eter",      "Aturdidor", "Líder de Angels of Delusion.", "", "", "Nangong Yu + Aria + Sunna"),
     new AgenteJugable("Aria",           "Aria",                   "https://ami.animecharactersdatabase.com/uploads/chars/36226-2084042043.png", "Eter",      "Anomalo",   "Constructo inteligente. Cantante principal.", "", "", "Aria + Nangong Yu + Sunna"),
-    new AgenteJugable("Sunna",          "Sunna",                  "https://tse2.mm.bing.net/th/id/OIP.pDS06TN4C5gd2185IQIflgHaH0?rs=1&pid=ImgDetMain&o=7&rm=3", "Fisico",    "Auxiliar",  "Compositora principal de Angels of Delusion.", "", "", "Sunna + Nangong Yu + Aria"),
+    new AgenteJugable("Sunna",          "Sunna",                  "https://tse2.mm.bing.net/th/id/OIP.pDS06TN4C5gd2185IQIflgHaH0?rs=1&pid=ImgDetMain&o=7&rm=3", "Fisico",    "Auxiliar",  "Compositora principal de Angels of Delusion.",
+        "W-Engine: Thoughtbop | Set: 4pc Moonlight Lullaby + 2pc Astral Voice | Stats principales: 6-Energy Regen/ATK, 5-ATK, 4-ATK | Substats: ATK, CRIT Rate, CRIT DMG",
+        "W-Engine: Weeping Cradle o Kaboom the Cannon | Mismo set (4pc Moonlight Lullaby + 2pc Astral Voice)",
+        "F2P: Sunna + Billy + Anby + Sumoboo | Anómalo: Sunna + Aria + Yuzuha + Biggest Fan"),
 
     // OTROS
     new AgenteJugable("Cissia",         "Cissia",                 "https://tse3.mm.bing.net/th/id/OIP.7zrvJzhxhFN4Za9a-hvS4gHaH0?rs=1&pid=ImgDetMain&o=7&rm=3", "Electrico", "Atacante",  "Especialista en Casos de la División de Orden Metropolitano.", "", "", "Cissia + Trigger + Rina"),
@@ -193,7 +195,79 @@ const listaAgentes = [
 ];
 
 const BD_agentes = {};
-listaAgentes.forEach(agente => { BD_agentes[agente.id] = agente; });
+listaAgentes.forEach(agente => {
+    BD_agentes[agente.id] = agente;
+    // Fusiona con equipos_buils.js si existe data estructurada para este agente
+    if (typeof BD_Builds !== "undefined" && BD_Builds[agente.id]) {
+        agente.dataBuilds = BD_Builds[agente.id];
+    }
+});
+
+// ============================================================
+// RENDER HELPERS - Builds y Equipos (usan la data de equipos_buils.js)
+// ============================================================
+function itemConImagen(item, alto) {
+    if (!item) return "";
+    return `
+    <div class="d-inline-flex align-items-center me-3 mb-1">
+        <img src="${item.imagen}" alt="${item.nombre}" style="height:${alto}px;width:${alto}px;object-fit:contain;border-radius:6px;background:#1a1a1a;" class="me-1 border">
+        <span class="small">${item.nombre}</span>
+    </div>`;
+}
+
+function renderBuildHTML(build) {
+    if (!build) return `<p class="text-muted small mb-0">No disponible aún.</p>`;
+
+    const altEngines = (build.altWengines || []).map(w => itemConImagen(w, 32)).join("");
+    const discSet     = (build.discSet || []).map(d => itemConImagen({ nombre: `${d.nombre} (${d.piezas}p)`, imagen: d.imagen }, 32)).join("");
+    const filasStats  = build.mainStats
+        ? Object.keys(build.mainStats).sort((a, b) => b - a)
+            .map(slot => `<tr><td class="text-muted">Ranura ${slot}</td><td>${build.mainStats[slot]}</td></tr>`).join("")
+        : "";
+    const substats = (build.substats || []).join(", ");
+
+    return `
+    <table class="table table-sm table-borderless align-middle mb-0">
+        <tbody>
+            <tr><th class="text-nowrap" style="width:35%">Motor W</th><td>${itemConImagen(build.wengine, 40)}</td></tr>
+            ${altEngines ? `<tr><th>Motores W Alternativos</th><td>${altEngines}</td></tr>` : ""}
+            ${discSet    ? `<tr><th>Set de Discos</th><td>${discSet}</td></tr>` : ""}
+            ${filasStats ? `<tr><th>Estadísticas Principales</th><td>
+                <table class="table table-sm mb-0"><tbody>${filasStats}</tbody></table>
+            </td></tr>` : ""}
+            ${substats   ? `<tr><th>Subestadísticas</th><td>${substats}</td></tr>` : ""}
+        </tbody>
+    </table>`;
+}
+
+function renderEquiposHTML(equipos) {
+    if (!equipos || !equipos.length) return `<p class="text-muted small mb-0">Sin datos de equipos.</p>`;
+
+    return equipos.map(eq => {
+        const miembros = eq.miembros.map(m => {
+            const agente = BD_agentes[m.id];
+            const imagen = agente ? agente.imagen : "https://placehold.co/100x100?text=?";
+            const nombre = agente ? agente.nombre : m.id;
+            return `
+            <div class="col text-center">
+                <img src="${imagen}" alt="${nombre}" style="height:70px;width:70px;object-fit:cover;border-radius:50%;background:#1a1a1a;" class="mb-1 border">
+                <div class="fw-bold small">${nombre}</div>
+                <div class="badge bg-secondary">${m.rol}</div>
+            </div>`;
+        }).join("");
+
+        const bangbooAlt = eq.bangbooAlt
+            ? `<div class="small text-muted mt-2">Bangboo alternativos: ${eq.bangbooAlt.join(", ")}</div>` : "";
+
+        return `
+        <div class="bg-light p-3 rounded border mb-3">
+            <h6 class="fw-bold mb-2">${eq.nombre}</h6>
+            <div class="row row-cols-3 row-cols-md-4 g-2 mb-2">${miembros}</div>
+            ${eq.bangboo ? `<div class="small">Bangboo: ${itemConImagen(eq.bangboo, 28)}</div>` : ""}
+            ${bangbooAlt}
+        </div>`;
+    }).join("");
+}
 
 // ============================================================
 // BASE DE DATOS - FACCIONES
@@ -296,6 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Filtros
     let filtroAtributo = "";
     let filtroRol      = "";
+    let filtroBusqueda = "";
 
     function aplicarFiltros() {
         const cards = document.querySelectorAll(".agente-card");
@@ -303,8 +378,10 @@ document.addEventListener("DOMContentLoaded", () => {
         cards.forEach(card => {
             const okAtrib = !filtroAtributo || card.dataset.atributo === filtroAtributo;
             const okRol   = !filtroRol      || card.dataset.rol      === filtroRol;
-            card.style.display = (okAtrib && okRol) ? "" : "none";
-            if (okAtrib && okRol) visibles++;
+            const okBusqueda = !filtroBusqueda || card.dataset.nombre.toLowerCase().includes(filtroBusqueda);
+            const visible = okAtrib && okRol && okBusqueda;
+            card.style.display = visible ? "" : "none";
+            if (visible) visibles++;
         });
         actualizarConteo(visibles);
     }
@@ -312,6 +389,20 @@ document.addEventListener("DOMContentLoaded", () => {
     function actualizarConteo(n) {
         const el = document.getElementById("conteo-agentes");
         if (el) el.textContent = n + " agente" + (n !== 1 ? "s" : "");
+    }
+
+    function buscarAgentePorNombre(nombre) {
+        const cards = document.querySelectorAll(".agente-card");
+        let encontrados = 0;
+        cards.forEach(card => {
+            if (card.dataset.nombre === nombre) {
+                card.style.display = "";
+                encontrados++;
+            } else {
+                card.style.display = "none";
+            }
+        });
+        actualizarConteo(encontrados);
     }
 
     function bindGrupo(grupoId, onChange) {
@@ -330,6 +421,14 @@ document.addEventListener("DOMContentLoaded", () => {
     bindGrupo("filtro-atributo", v => filtroAtributo = v);
     bindGrupo("filtro-rol",      v => filtroRol      = v);
 
+    const buscadorAgentes = document.getElementById("buscador-agentes");
+    if (buscadorAgentes) {
+        buscadorAgentes.addEventListener("input", function () {
+            filtroBusqueda = this.value.trim().toLowerCase();
+            aplicarFiltros();
+        });
+    }
+
     // Modal
     const modalElemento = document.getElementById("agenteModal");
     if (modalElemento) {
@@ -345,9 +444,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("modalImagen").src               = info.imagen || "https://placehold.co/120x120?text=?";
                 document.getElementById("modalImagenWrapper").dataset.atributo = info.atributo || "";
                 document.getElementById("modalDescripcion").textContent  = info.descripcion || "Sin descripción disponible.";
-                document.getElementById("modalBuildPremium").textContent = info.buildpremium || "No disponible aún.";
-                document.getElementById("modalBuildF2P").textContent     = info.buildF2P     || "No disponible aún.";
-                document.getElementById("modalSinergia").textContent     = info.sinergias    || "Sin datos de sinergia.";
+                if (info.dataBuilds) {
+                    document.getElementById("modalBuildPremium").innerHTML     = renderBuildHTML(info.dataBuilds.buildPremium);
+                    document.getElementById("modalBuildF2P").innerHTML         = renderBuildHTML(info.dataBuilds.buildF2P);
+                    document.getElementById("modalEquiposContenedor").innerHTML = renderEquiposHTML(info.dataBuilds.equipos);
+                } else {
+                    // Fallback: agentes que aún solo tienen los campos de texto viejos
+                    document.getElementById("modalBuildPremium").innerHTML     = `<p class="small mb-0">${info.buildpremium || "No disponible aún."}</p>`;
+                    document.getElementById("modalBuildF2P").innerHTML         = `<p class="small mb-0">${info.buildF2P || "No disponible aún."}</p>`;
+                    document.getElementById("modalEquiposContenedor").innerHTML = `<p class="small text-muted mb-0">${info.sinergias || "Sin datos de sinergia."}</p>`;
+                }
                 modalAgente.show();
             }
         });

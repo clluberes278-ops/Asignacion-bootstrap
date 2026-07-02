@@ -1,59 +1,147 @@
+:root {
+  --zzz-accent: #e8b400;
+  --zzz-accent-cyan: #22d3ee;
+
+  --zzz-bg: #f5f5f3;
+  --zzz-bg-elevated: #ffffff;
+  --zzz-text: #000000;
+  --zzz-text-muted: #5c5c5c;
+  --zzz-border: #d9d9d6;
+}
+
+[data-bs-theme="dark"] {
+  --zzz-bg: #0d0d0d;
+  --zzz-bg-elevated: #1a1a1a;
+  --zzz-text: #070707;
+  --zzz-text-muted: #adb5bd;
+  --zzz-border: #2e2e2e;
+}
+
+/* Botones del filtro de roles en modo oscuro */
+[data-bs-theme="dark"] #filtro-rol .btn-outline-dark,
+[data-bs-theme="dark"] #filtro-rol .btn-outline-dark .material-symbols-outlined {
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] #filtro-rol .btn-outline-dark.active,
+[data-bs-theme="dark"] #filtro-rol .btn-outline-dark:focus,
+[data-bs-theme="dark"] #filtro-rol .btn-outline-dark:hover {
+    color: #111111;
+    background-color: #d6d6d6;
+    border-color: #c1c1c1;
+}
+
+[data-bs-theme="dark"] #filtro-rol .btn-outline-dark.active .material-symbols-outlined,
+[data-bs-theme="dark"] #filtro-rol .btn-outline-dark:focus .material-symbols-outlined,
+[data-bs-theme="dark"] #filtro-rol .btn-outline-dark:hover .material-symbols-outlined {
+    color: #111111;
+}
+
 .Cabecera {
-    font-family: 'Arial', sans-serif; /* Cambia la fuente a Arial */
-    color: #000000; /* Cambia el color del texto a azul de Bootstrap */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil al texto */
-    background: linear-gradient(90deg, #0d6efd, #6610f2); /* Agrega un fondo degradado */
+    font-family: 'Arial', sans-serif;
+    color: var(--zzz-text);
+    background: var(--zzz-accent);
 }
 
 .tarjeta-interactiva {
-    transition: transform 0.3s ease, color 0.3s ease; /* Hace que el cambio sea suave */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
-
 .tarjeta-interactiva:hover {
-    color: #0d6efd; /* Cambia el texto a azul de Bootstrap al pasar el mouse */
-    transform: translateY(-5px); /* Lo eleva sutilmente */
+    color: var(--zzz-accent);
+    transform: translateY(-5px);
     cursor: pointer;
 }
 
 .hover {
-   transition: transform 0.3s ease, color 0.3s ease; /* Hace que el cambio sea suave */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 .hover:hover {
-    color: #0d6efd; /* Cambia el texto a azul de Bootstrap al pasar el mouse */
-    transform: translateY(-5px); /* Lo eleva sutilmente */
+    color: var(--zzz-accent);
+    transform: translateY(-5px);
     cursor: pointer;
+}
+
+/* Estilos para el buscador y panel de filtros en la página de Agentes */
+.filtros-agentes {
+    padding: 1rem;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid #dee2e6;
+}
+
+[data-bs-theme="dark"] .filtros-agentes {
+    background: rgba(33,33,33,0.92);
+    border-color: #2e2e2e;
+}
+
+.filtro-grupo {
+    min-width: 220px;
+}
+
+/* Mejor presentación para la página de contacto */
+.contacto-page {
+    min-height: calc(100vh - 240px);
+}
+
+.card-contacto {
+    background: rgba(255,255,255,0.95);
+    border-radius: 1.5rem;
+}
+
+[data-bs-theme="dark"] .card-contacto {
+    background: rgba(23,23,23,0.94);
+}
+
+.contacto-page .lead {
+    color: #6c757d;
+}
+
+.filtro-label {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.buscador-wrapper {
+    min-width: 250px;
+    max-width: 310px;
+}
+
+#buscador-agentes {
+    border-left: none;
+}
+
+.input-group-text .material-symbols-outlined {
+    font-size: 1.05rem;
 }
 
 .btn-flotante {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #0d6efd; /* Azul de Bootstrap */
-    color: white;
+    background-color: var(--zzz-accent);
+    color: #171717;
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
-
 .btn-flotante:hover {
-    background-color: #0b5ed7; /* Un tono más oscuro de azul de Bootstrap */
-    transform: translateY(-3px); /* Eleva el botón ligeramente */
+    filter: brightness(0.9);
+    transform: translateY(-3px);
 }
 
 /* Estilos para el Hero de Zenless Zone Zero */
+/* Fondo oscuro fijo a propósito: zona cinemática, se mantiene igual en ambos modos */
 .hero-section {
     background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
     color: white;
-    border-bottom: 3px solid #0d6efd;
+    border-bottom: 3px solid var(--zzz-accent);
 }
-
 .hero-section h1 {
     color: #fff;
-    text-shadow: 0 0 10px rgba(13, 110, 253, 0.5);
+    text-shadow: 0 0 10px rgba(232, 180, 0, 0.4);
 }
-
 .hero-section .lead {
     color: #adb5bd;
 }
@@ -64,42 +152,47 @@
 
 /* Asegura que todas las imágenes de los agentes tengan el mismo tamaño */
 .card-img-top {
-    height: 320px; /* Reducido para mejorar la simetría visual en el grid */
-    object-fit: cover; /* Evita que las imágenes se deformen al redimensionar */
-    object-position: center 20%; /* Sube el enfoque de la imagen para que el rostro se vea más arriba */
+    height: 320px;
+    object-fit: cover;
+    object-position: center 20%;
 }
 
 /* Estilos para la sección de Tips/Popover */
 .Tips-section {
-    background-color: #f8f9fa;
+    background-color: var(--zzz-bg-elevated);
     border-radius: 10px;
 }
 
 .popover {
-    border: 1px solid #0d6efd;
+    border: 1px solid var(--zzz-accent);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* ===== Imagen del Agente en el Modal de detalles ===== */
+/* Mismo fondo oscuro fijo que .hero-section, misma razón de diseño */
 .agente-imagen-wrapper {
     width: 100%;
-    height: 320px; /* misma altura que .card-img-top para mantener consistencia visual */
+    height: 320px;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); /* mismo degradado que .hero-section */
-    border: 2px solid #333; /* mismo borde que .carousel */
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    border: 2px solid #333;
 }
 
 .agente-imagen-modal {
     height: 100%;
     width: auto;
     max-width: 100%;
-    object-fit: contain; /* nunca recorta al personaje, a diferencia de .card-img-top */
+    object-fit: contain;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
-    transition: transform 0.3s ease; /* mismo timing que .tarjeta-interactiva */
+    transition: transform 0.3s ease;
+}
+
+#modalDescripcion {
+    color: var(--zzz-text);
 }
 
 .agente-imagen-wrapper:hover .agente-imagen-modal {
@@ -126,4 +219,14 @@
 .agente-imagen-wrapper[data-atributo="Fisico"] {
     background: linear-gradient(135deg, #2b2b2b 0%, #5c5c5c 100%);
     border-color: #5c5c5c;
+}
+
+/* ===== Modal del Agente: límite de alto + scroll interno para builds/equipos largos ===== */
+#agenteModal .modal-content {
+    max-height: 90vh;
+}
+
+#agenteModal .tab-content {
+    max-height: calc(90vh - 130px); /* resta header + barra de tabs */
+    overflow-y: auto;
 }
